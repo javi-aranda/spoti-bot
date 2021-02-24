@@ -1,0 +1,8 @@
+deprecated
+newrelic
+requests
+pip-tools
+python-telegram-bot
+python-dotenv
+spotipy
+selenium
