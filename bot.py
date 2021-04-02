@@ -24,7 +24,7 @@ def find_and_send_tracks(update: Update, context: CallbackContext) -> None:
         api = SpotipyManager()
         try:
             api.add_tracks_to_playlist(tracks)
-            update.message.reply_text("✔️ Allright!")
+            update.message.reply_text("✔️ Allright! Gracias :)")
         except Exception:
             update.message.reply_text("❌ Algo falló :(")
 
