@@ -28,6 +28,9 @@ def find_and_send_tracks(update: Update, context: CallbackContext) -> None:
         except Exception:
             update.message.reply_text("❌ Algo falló :(")
 
+def debug_in_prod(update: Update, context: CallbackContext) -> None:
+    if "ping" in update.message.text:
+        update.message.reply("pong")
 
 def main(local: bool):
     """Start the bot."""
@@ -37,6 +40,7 @@ def main(local: bool):
     dispatcher = updater.dispatcher
 
     dispatcher.add_handler(MessageHandler(Filters.text & ~Filters.command, find_and_send_tracks))
+    dispatcher.add_handler(MessageHandler(Filters.text & ~Filters.command, debug_in_prod))
 
     if local:
         updater.start_polling()
