@@ -40,6 +40,7 @@ class SpotipyManager():
         time.sleep(2)
         driver.implicitly_wait(5)
         url = urlparse(driver.current_url)
+        logger.info(f"Access URL: {driver.current_url}")
         token = parse_qs(url.fragment)['access_token'][0]
         driver.quit()
         return token
