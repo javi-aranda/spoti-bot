@@ -1,1 +1,1 @@
-web: python3 bot.py --prod
+web: newrelic-admin run-program python3 bot.py --prod
