@@ -54,8 +54,5 @@ Se ha instalado el plugin heroku-repo para reiniciar el desarrollo
 y que el código se pueda publicar en GitHub.
 
 ## TODO's
-- [ ] Limpiar código
-- [ ] Optimizar código
-- [ ] Añadir tests
-- [ ] Mejorar documentación
+Para una lista de las tareas pendientes, consultar https://github.com/javisenberg/spoti-bot/projects/1 y https://github.com/javisenberg/spoti-bot/issues/.
  
