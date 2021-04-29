@@ -22,6 +22,10 @@ class SpotipyManager():
     def add_tracks_to_playlist(self, track_list: List[str]):
         self.sp.playlist_add_items(self.playlist, track_list)
 
+    def get_playlist_tracks(self):
+        data = self.sp.playlist_tracks(playlist_id=self.playlist)
+        return [i['track']['id'] for i in data['items']]
+
     def get_oauth_token(self):
         s = SpotifyOAuth()
         # TODO: Esto es una guarrada
