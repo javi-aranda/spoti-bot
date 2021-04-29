@@ -24,13 +24,13 @@ def find_and_send_tracks(update: Update, context: CallbackContext) -> None:
         api = SpotipyManager()
         try:
             response = send_unique_tracks(api, tracks)
-            update.message.reply_text("✔️ Allright! Gracias :)")
+            update.message.reply_text(response)
         except Exception:
             update.message.reply_text("❌ Algo falló :(")
 
 def send_unique_tracks(api: SpotipyManager, tracks: list):
     current_tracks = api.get_playlist_tracks()
-    unique_tracks = list(set(current_tracks) - set(tracks))
+    unique_tracks = list(set(tracks) - set(current_tracks))
     duplicate_tracks = len(tracks) - len(unique_tracks)
     api.add_tracks_to_playlist(unique_tracks)
     if unique_tracks > 0:
