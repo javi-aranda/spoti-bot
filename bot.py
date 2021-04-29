@@ -31,12 +31,12 @@ def find_and_send_tracks(update: Update, context: CallbackContext) -> None:
 def send_unique_tracks(api: SpotipyManager, tracks: list):
     current_tracks = api.get_playlist_tracks()
     unique_tracks = list(set(tracks) - set(current_tracks))
-    duplicate_tracks = len(tracks) - len(unique_tracks)
-    api.add_tracks_to_playlist(unique_tracks)
-    number_uniques, number_duplicates = (len(unique_tracks), len(duplicate_tracks))
-    if number_uniques > 0:
+    number_uniques = len(unique_tracks)
+    number_duplicates = len(tracks) - len(unique_tracks)
+    if number_uniques > 0:    
+        api.add_tracks_to_playlist(unique_tracks)
         if number_duplicates > 0:
-            return f'✔️ Allright! {len(duplicate_tracks)} ya estaban, el resto se añadieron'
+            return f'✔️ Allright! {number_duplicates} ya estaban, el resto se añadieron'
         return '✔️ Allright! Gracias :)'
     return 'Este temardo ya estaba en la playlist'
 
