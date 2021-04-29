@@ -33,8 +33,9 @@ def send_unique_tracks(api: SpotipyManager, tracks: list):
     unique_tracks = list(set(tracks) - set(current_tracks))
     duplicate_tracks = len(tracks) - len(unique_tracks)
     api.add_tracks_to_playlist(unique_tracks)
-    if unique_tracks > 0:
-        if duplicate_tracks > 0:
+    number_uniques, number_duplicates = (len(unique_tracks), len(duplicate_tracks))
+    if number_uniques > 0:
+        if number_duplicates > 0:
             return f'✔️ Allright! {len(duplicate_tracks)} ya estaban, el resto se añadieron'
         return '✔️ Allright! Gracias :)'
     return 'Este temardo ya estaba en la playlist'
