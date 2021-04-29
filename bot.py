@@ -60,8 +60,10 @@ if __name__ == '__main__':
     args = parser.parse_args()
     if args.local:
         from dotenv import load_dotenv
+        logger.info("Starting bot locally")
         env_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), '.env')
         load_dotenv(env_file)
         main(local=True)
     else:
+        logger.info("Starting bot prod")
         main(local=False)
