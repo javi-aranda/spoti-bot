@@ -1,13 +1,10 @@
 # Musikilla-bot
 
 ## Qué es
-Un bot de telegram.
+Un bot de telegram que intercepta URLs de Spotify en un grupo y añade los tracks a una lista de reproducción compartida.
 
-## Qué hace
-Cosas, como los catalanes.
-
-## Cómo las hace
-1. Necesitas rellenar un fichero `.env` con la información relevante, 
+## Cómo funciona
+1. Necesitas escribir un fichero `.env` con la información relevante, 
 como el `TELEGRAM_BOT_TOKEN` o las distintas variables de Spotify.
 
 2. Se recomienda instalar un entorno virtual de Python para gestionar las dependencias del proyecto, las cuales se pueden instalar mediante:
@@ -27,8 +24,8 @@ como el `TELEGRAM_BOT_TOKEN` o las distintas variables de Spotify.
     python3 bot.py --local
     ```
 
-## Cosas de Heroku
-Para que esta vaina funcione se necesita tener un entorno cloud, en este caso la version gratuita de Heroku ofrece todo lo necesario.
+## Deploy en Heroku
+Para que el bot funcione adecuadamente se necesita tener un entorno cloud, en este caso la version gratuita de Heroku ofrece todo lo necesario.
 
 ### Variables de entorno
 Es necesario configurar de nuevo las variables de entorno que se usan en
@@ -44,9 +41,10 @@ la aplicación, para este proyecto se han utilizado:
 
 Son necesarios para el testeo automático de Selenium a la hora
 de obtener el token OAuth2 de Spotify.
-### Aplicaciones
+
+### Aplicaciones extenas
 Hay un addon instalado que realiza ping 2 veces cada minuto para
-mantener viva la instancia del bot pero no sé si está funcionando. 
+mantener viva la instancia del bot, es totalmente opcional pero en caso de que la instancia se encuentre apagada tardará unos segundos más en responder.
 1. https://elements.heroku.com/addons/newrelic
 
 ### Plugins
