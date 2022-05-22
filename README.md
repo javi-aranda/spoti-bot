@@ -1,4 +1,4 @@
-# Musikilla-bot
+# Spoti-bot
 
 ## Qué es
 Un bot de telegram que intercepta URLs de Spotify en un grupo y añade los tracks a una lista de reproducción compartida.
